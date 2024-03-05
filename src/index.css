@@ -1,4 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+body {
+    background: url('./img/bg.gif') no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-color: rgb(48, 0, 102);
+}
 
 .App {
     display: flex;
@@ -6,7 +15,6 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: rgb(24, 0, 80);
     color: white;
     gap: 128px;
 }
@@ -15,27 +23,43 @@
     font-family: "Montserrat", sans-serif;
     font-size: 14px;
     text-decoration: none;
-    background-color: #dd3400;
+    background-color: #dd2c00;
     color: #fff;
     border: 0 solid transparent;
     border-radius: 15px;
-    padding: 10px 20px;
+    padding: 17px 20px;
+}
+
+.coinflipstartloading {
+    margin-top: 112px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    background-color: #8f2100;
+    color: #fff;
+    border: 0 solid transparent;
+    border-radius: 15px;
+    padding: 17px 20px;
 }
 
 .images {
-    width: 150px;
-    height: 150px;
+    width: 170px;
+    height: 170px;
 }
 .resultVal {
+    padding: 15px 25px;
+    border-radius: 15px;
+    background-color: rgb(12, 0, 41);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .result {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Lobster", sans-serif;
     font-size: 24px;
-    color: #dd3400;
+    color: #ff8b07;
     display: flex;
+    gap: 18px;
     flex-direction: column;
     align-items: center;
 }

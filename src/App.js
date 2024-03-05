@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import orel from './img/orel.png';
 import reshka from './img/reshka.png';
-import preloader from './img/coin.gif';
+import preloader from './img/flip.gif';
 
 function App() {
   const [result, setResult] = useState(null);
+  const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const coinflipstart = () => {
@@ -12,8 +13,16 @@ function App() {
     setTimeout(() => {
       const rand = Math.random();
       const newValue = rand < 0.5 ? 'orel' : 'reshka';
-      setResult(newValue);
       setLoading(false);
+      if (newValue === 'orel')
+      {
+        setImage(orel);
+        setResult('Орел / Heads');
+      }
+      else {
+        setImage(reshka);
+        setResult('Решка / Tails');
+      }
     }, 1000); // 2 секунды
   };
 
@@ -25,14 +34,22 @@ function App() {
   return (
     <div className="App">
       {loading ? (
+        <div className="result">
+        <p className="resultVal">Loading...</p>
         <img className="images" src={preloader} alt="Loading..." />
+        <button className="coinflipstartloading">
+        🔄 LOADING... 🔄
+        </button>
+        </div>   
       ) : (
         <>
           {result && (
-            <div className="result">
+            <div className='wrapper'> 
+              <div className="result">
               <p className="resultVal">{result}</p>
-              <img className="images" src={result === 'orel' ? orel : reshka} alt={result} />
-            </div>
+              <img className="images" src={image} alt={result} />
+              </div> 
+          </div>
           )}
           <button onClick={coinflipstart} className="coinflipstart">
           🍀 GET SIGNAL 🍀
